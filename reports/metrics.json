@@ -1,0 +1,125 @@
+{
+  "dataset": "M5 (Walmart)",
+  "slice": "FOODS_1 \u00d7 CA stores, weekly",
+  "n_series": 805,
+  "n_weeks": 282,
+  "date_start": "2011-01-29",
+  "date_end": "2016-06-18",
+  "horizon_weeks": 8,
+  "cv_windows": 4,
+  "sample_id": "FOODS_1_218_CA_2",
+  "promo_share": 0.113,
+  "metrics": [
+    {
+      "model": "LightGBM",
+      "bucket": "all",
+      "mase": 0.734,
+      "rmsse": 0.915,
+      "series": 805,
+      "rows": 25760,
+      "promo_share": 0.113
+    },
+    {
+      "model": "LightGBM",
+      "bucket": "promo",
+      "mase": 0.792,
+      "rmsse": 0.929,
+      "series": 82,
+      "rows": 1786,
+      "promo_share": 0.113
+    },
+    {
+      "model": "LightGBM",
+      "bucket": "no_promo",
+      "mase": 0.724,
+      "rmsse": 0.905,
+      "series": 758,
+      "rows": 23974,
+      "promo_share": 0.113
+    },
+    {
+      "model": "SeasonalNaive",
+      "bucket": "all",
+      "mase": 0.984,
+      "rmsse": 1.258,
+      "series": 805,
+      "rows": 25760,
+      "promo_share": 0.113
+    },
+    {
+      "model": "SeasonalNaive",
+      "bucket": "promo",
+      "mase": 1.079,
+      "rmsse": 1.317,
+      "series": 82,
+      "rows": 1786,
+      "promo_share": 0.113
+    },
+    {
+      "model": "SeasonalNaive",
+      "bucket": "no_promo",
+      "mase": 0.972,
+      "rmsse": 1.242,
+      "series": 758,
+      "rows": 23974,
+      "promo_share": 0.113
+    }
+  ],
+  "whatif_lift": -0.149,
+  "pi": {
+    "sku_lo": -62.88,
+    "sku_hi": 50.82,
+    "store_lo": -203.49,
+    "store_hi": 585.51
+  },
+  "top_drivers": [
+    {
+      "feature": "units last week",
+      "mean_abs_shap": 29.52958947001088,
+      "last_week_shap": 9.200684974495164,
+      "last_week_value": 34.0
+    },
+    {
+      "feature": "avg units, last 4 weeks",
+      "mean_abs_shap": 28.78758562216937,
+      "last_week_shap": 20.941999293587354,
+      "last_week_value": 64.25
+    },
+    {
+      "feature": "avg units, last 13 weeks",
+      "mean_abs_shap": 5.455037074091245,
+      "last_week_shap": 4.784803170762491,
+      "last_week_value": 60.46154022216797
+    },
+    {
+      "feature": "units 2 weeks ago",
+      "mean_abs_shap": 4.377521125074569,
+      "last_week_shap": 2.159169829562816,
+      "last_week_value": 58.0
+    },
+    {
+      "feature": "item",
+      "mean_abs_shap": 3.826721429439351,
+      "last_week_shap": 2.8918880309138517,
+      "last_week_value": 214.0
+    },
+    {
+      "feature": "units 4 weeks ago",
+      "mean_abs_shap": 2.6161664331847154,
+      "last_week_shap": -0.21116821229873178,
+      "last_week_value": 57.0
+    },
+    {
+      "feature": "regular price",
+      "mean_abs_shap": 2.4085271054278086,
+      "last_week_shap": 2.0830296960012475,
+      "last_week_value": 0.9800000190734863
+    },
+    {
+      "feature": "week of year",
+      "mean_abs_shap": 1.8433656129998173,
+      "last_week_shap": 0.5697397685667215,
+      "last_week_value": 24.0
+    }
+  ]
+}
